@@ -2,14 +2,13 @@
 
 ---
 
-![lisense](https://img.shields.io/github/license/Antabot/White-Jotter)
-![release](https://img.shields.io/github/v/release/Antabot/White-Jotter)
+![lisense](https://img.shields.io/github/license/Antabot/White-Jotter-Vue)
+![Build Status](https://www.travis-ci.org/Antabot/White-Jotter-Vue.svg?branch=master)
 
 
-这是一个简单的项目，旨在让新入门 web 的开发者体验使用 Vue + Java(Spring Boot) + Mysql 以前后端分离模式完成开发的流程。由于开发过程中并未充分考虑安全防护问题，并不建议将该项目用于生产环境。
+这是一个简单的前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。
 
-https://github.com/Antabot/White-Jotter)
-
+除了用作入门练习，我还希望该项目可以作为一些常见 Web 项目的脚手架，帮助大家简化搭建网站的流程。之所以叫白卷，是因为它从 0 开始，会随着时间的推移逐渐完善。
 
 感谢 JetBrains 提供全家桶开源许可，IDEA 确实是 Java 领域最好用的 IDE。
 
@@ -17,19 +16,19 @@ https://github.com/Antabot/White-Jotter)
 
 # 整体效果
 
-## 首页
+## 1.首页
 
 作为展示页面，包括开发这个项目的主要参考资料、近期更新和 Slogan
 
 ![首页](https://img-blog.csdnimg.cn/20190403215932913.png)
 
-## 图书馆
+## 2.图书馆
 
 提供图书信息展示功能
 
 ![图书馆](https://i.loli.net/2019/12/03/AGLbIupct68ThBD.png)
 
-## 笔记本
+## 3.笔记本
 
 提供笔记、博文展示功能
 
@@ -37,46 +36,36 @@ https://github.com/Antabot/White-Jotter)
 
 ![文章内容.png](https://i.loli.net/2020/01/20/DQgbpy2LKhiZc4x.png)
 
-## 后台管理
+## 4.后台管理
 
 包含 dashboard、内容管理、用户及权限管理等
 
 ![后台](https://img-blog.csdnimg.cn/20191202200516251.png)
 
-# 架构图
+# 技术栈
 
-- **应用架构**
+## 1.前端技术栈
 
-![应用架构](https://img-blog.csdnimg.cn/20200524211402855.JPG)
-
-- **技术架构**
-
-![技术架构](https://img-blog.csdnimg.cn/20200524211507112.JPG)
-
-# 主要技术栈
-
-## 前端
-
-1.Vue.js  
+1.Vue  
 2.ElementUI  
 3.axios   
 
-## 后端
+## 2.后端技术栈
 
 1.Spring Boot  
-2.Apache Shiro
-3.Apache Log4j2
-4.Spring Data JPA
-5.Spring Data Redis
-
-## 数据库
-
-1.MySQL  
-2.Redis
+2.Spring Data + JPA  
+3.MySQL  
+4.Shiro
 
 # 部署方法
 
 1.clone 项目到本地
+
+前端：
+
+`git clone https://github.com/Antabot/White-Jotter-Vue`
+
+后端：
 
 `git clone https://github.com/Antabot/White-Jotter`
 
@@ -84,7 +73,7 @@ https://github.com/Antabot/White-Jotter)
 
 数据库完整脚本 `wj.sql` 放在后端项目的 `src\main\resources` 目录下，也可根据需要自行在 MySQL 中执行数据库脚本。  
 
-运行项目前请启动 Redis 服务，端口为 6379（默认端口），密码为空。
+Redis 端口为 6379（默认端口），密码为空。
 
 3.数据库配置在后端项目的 `src\main\resources` 目录下的`application.properties` 文件中，mysql 版本为 8.0.15   。
 
@@ -103,7 +92,7 @@ npm install
 # 在 localhost:8080 启动项目
 npm run dev
 
-```
+```  
 
 由于在 `wj-vue` 项目中已经配置了端口转发，将数据转发到SpringBoot上，因此项目启动之后，在浏览器中输入 `http://localhost:8080` 就可以访问我们的前端项目了，所有的请求通过端口转发将数据传到 SpringBoot 中（注意此时不要关闭 SpringBoot 项目）。
 
@@ -111,7 +100,7 @@ npm run dev
 
 ```
 npm run build
-```
+```  
 
 该命令执行成功之后， `wj-vue` 目录下生成一个 `dist` 文件夹，可以将该文件夹中的两个文件 `static` 和 `index.html` 拷贝到 `wj` 项目中 `resources/static/` 目录下，然后直接运行 `wj` 项目，访问 `http://localhost:8443` ，实际上是把前端打包后作为静态文件，但不推荐使用这种方式。
 
@@ -119,7 +108,7 @@ npm run build
 
 # 教程
 
-我在 CSDN 上分享了开发这个项目的教程：  
+我在 CSDN 上分享了开发这个项目的教程，有兴趣的小伙伴可以点击下面的链接查看。  
 
 1.[项目简介](https://blog.csdn.net/Neuf_Soleil/article/details/88925013)
 
@@ -164,9 +153,9 @@ npm run build
 # 重要更新
 
 ## 2020
-
+04-05 拆分前后端项目  
 01-20 利用开源 markdown 编辑器实现文章展示与管理模块
-
+ 
 ---
 
 ## 2019 
