@@ -31,6 +31,7 @@ public class LoginController {
     public Result login(@RequestBody User requestUser) {
         String username = requestUser.getUsername();
         username = HtmlUtils.htmlEscape(username);
+        System.out.println("名字:"+ username );
 
         Subject subject = SecurityUtils.getSubject();
 //        subject.getSession().setTimeout(10000);
